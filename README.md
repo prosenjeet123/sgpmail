@@ -19,3 +19,49 @@ Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and 
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
+
+## Features
+- Rest API used all over the application for live expierence
+- Responsive layout 
+- Mobile responsive
+- Dynamic pagination
+- Shared service
+- BEM methodology standard across the application
+- Card ui reusable library
+- shimmer & loader (from scratch)
+- Light/dark mode toggle
+- Live previews
+- Fullscreen mode
+- Cross platform
+
+
+## Installation
+
+Install my-project with npm
+
+```bash
+  npm i
+```
+    
+## To run in localhost
+
+```javascript
+npm start
+```
+
+
+
+
+## Badges
+
+Add badges from somewhere like: [shields.io](https://shields.io/)
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
+
+
+## Demo
+
+https://sgpmail-fc3fe.web.app/
+

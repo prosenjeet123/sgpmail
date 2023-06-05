@@ -35,6 +35,7 @@ export class MailContentComponent implements OnInit {
     this.basic.getEmailbyId(id).subscribe((re)=>{
       this.firstEmailData = re;
       this.loader = false;
+       this.currentPagination =1  ;
     })
   }
   fetchEmailbyId(){
@@ -50,14 +51,14 @@ export class MailContentComponent implements OnInit {
         const matchingIndex = this.emailData.findIndex((item: { id: any; }) => item.id === this.firstEmailData.id);
         console.log(this.emailData[matchingIndex-1]);
         this.firstEmailData = this.emailData[matchingIndex-1];
-        this.currentPagination = this.currentPagination -1  ;
+        this.currentPagination =  Number(this.currentPagination) -1  ;
         this.loader = false;
       } else{
         console.log('next');
         const matchingIndex = this.emailData.findIndex((item: { id: any; }) => item.id === this.firstEmailData.id);
         console.log(this.emailData[matchingIndex+1]);
         this.firstEmailData = this.emailData[matchingIndex+1];
-        this.currentPagination = this.currentPagination +1;
+        this.currentPagination = Number(this.currentPagination) + 1;
         this.loader = false;
       }
     } else {
