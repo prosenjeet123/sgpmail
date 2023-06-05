@@ -1,0 +1,32 @@
+
+
+
+<div class="mainwrap" #scrollContainer [ngClass]="{'dark-mode': darkToggle}"  *ngIf="!isLoading">
+    <button class="mainwrap__floatburger" *ngIf="!cardClick && isMobile" (click)="activeScreen = !activeScreen"><img src="../../assets/img/burger-menu-svgrepo-com.svg" alt="icon"></button>
+    <button class="mainwrap__backtoHome" *ngIf="cardClick  && isMobile" (click)="cardClick = !cardClick"><</button>
+
+    
+    <button class="switcher" (click)="darkToggle = !darkToggle">
+       {{darkToggle ? 'Dark' : 'Light'}} <img src="../../assets/img/contrast-svgrepo-com.svg" alt="icon">
+    </button>
+
+    <div class="mainwrap__nav" [ngClass]="{'active': activeScreen}">
+        <sgpmail-sidemenu [userData]="dummyProfile"></sgpmail-sidemenu>
+    </div>
+    <div class="mainwrap__cards">
+        <sgpmail-cards-layout  [userData]="dummyProfile" [emailData]="dummyEmailData"  (clickCardEvent)="handleCardEvent($event)"></sgpmail-cards-layout>
+    </div>
+    <div class="mainwrap__emailcontent"  [ngClass]="{'contentActive': cardClick}">
+        <sgpmail-mail-content  [emailData]="dummyEmailData" ></sgpmail-mail-content>
+    </div>
+
+
+    
+</div>
+
+<div class="mainwrap__loaderwrap" *ngIf="isLoading">
+    <div class="mainwrap__loaderwrap__loader">
+
+    </div>
+</div>
+

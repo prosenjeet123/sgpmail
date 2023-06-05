@@ -1,0 +1,99 @@
+<div class="menu" *ngIf="userData">
+    <div class="menu__profilewrap">
+        <div class="menu__profilewrap__pic">
+            <img [src]="userData.picture" alt="{{userData.firstName}}" loading="lazy">
+        </div>
+        <div class="menu__profilewrap__pdetail">
+            <div class="menu__profilewrap__pdetail__name">
+                {{userData.firstName + ' ' + userData.lastName}}
+            </div>
+            <div class="menu__profilewrap__pdetail__emailid" title="{{userData.firstName + userData.lastName + '@gmail.com'}}">
+                {{userData.firstName + userData.lastName + '@gmail.com'}}
+            </div>
+        </div>
+    </div>
+
+    <div class="menu__fixedwrap">
+        <ul class="menu__list">
+            <li class="menu__list__li active">
+                <div class="menu__list__li__icon"><img src="../../../assets/img/noun_contact_2984932.svg" alt="icon"></div>
+                <div class="menu__list__li__title">Inbox</div>
+                <div class="menu__list__li__badge">
+                    <span class="menu__list__li__badge__icon">
+                        20
+                    </span>
+                </div>
+            </li>
+            <li class="menu__list__li">
+                <div class="menu__list__li__icon"><img src="../../../assets/img/noun_Star_2986785.svg" alt="icon"></div>
+                <div class="menu__list__li__title">Flagged</div>
+                <div class="menu__list__li__badge">
+                </div>
+            </li>
+            <li class="menu__list__li">
+                <div class="menu__list__li__icon"><img src="../../../assets/img/noun_Box_2466558.svg" alt="icon"></div>
+                <div class="menu__list__li__title">Draft</div>
+                <div class="menu__list__li__badge">
+                </div>
+            </li>
+            <li class="menu__list__li">
+                <div class="menu__list__li__icon"><img src="../../../assets/img/noun_sent_61680.svg" alt="icon"></div>
+                <div class="menu__list__li__title">Sent</div>
+                <div class="menu__list__li__badge">
+                </div>
+            </li>
+            <li class="menu__list__li">
+                <div class="menu__list__li__icon"><img src="../../../assets/img/noun_Trash_1526083.svg" alt="icon"></div>
+                <div class="menu__list__li__title">Trash</div>
+                <div class="menu__list__li__badge">
+                </div>
+            </li>
+            <li class="menu__list__li">
+                <div class="menu__list__li__icon"><img src="../../../assets/img/noun_Star_2986785.svg" alt="icon"></div>
+                <div class="menu__list__li__title">More</div>
+                <div class="menu__list__li__badge">
+                </div>
+            </li>
+        </ul>
+    
+        <div class="menu__folderswrap">
+            <div class="menu__folderswrap__title">
+                <div class="menu__folderswrap__title__tag">Folders</div>
+                <button class="menu__folderswrap__title__badge">Add</button>
+            </div>
+    
+            <ul class="menu__folderswrap__list">
+                <li class="menu__folderswrap__list__li active">
+                    <div class="menu__folderswrap__list__li__icon"><img src="../../../assets/img/noun_Folder_1558235_0.svg" alt="icon">
+                    </div>
+                    <div class="menu__folderswrap__list__li__title">Office</div>
+                    <div class="menu__folderswrap__list__li__badge">
+                     
+                    </div>
+                </li>
+                <li class="menu__folderswrap__list__li ">
+                    <div class="menu__folderswrap__list__li__icon"><img src="../../../assets/img/noun_Folder_1558235_1.svg" alt="icon">
+                    </div>
+                    <div class="menu__folderswrap__list__li__title">Personal</div>
+                    <div class="menu__folderswrap__list__li__badge">
+                     
+                    </div>
+                </li>
+                <li class="menu__folderswrap__list__li ">
+                    <div class="menu__folderswrap__list__li__icon"><img src="../../../assets/img/noun_Folder_1558235_2.svg" alt="icon">
+                    </div>
+                    <div class="menu__folderswrap__list__li__title">Freelance</div>
+                    <div class="menu__folderswrap__list__li__badge">
+                     
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+
+    <div class="menu__footer">
+        <button class="menu__footer__compose">Compose</button>
+    </div>
+</div>

@@ -1,1 +1,122 @@
 /* You can add global styles to this file, and also import other style files */
+// Import Variables
+@import './assets/scss/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
+
+:root {
+  --primary-color: $primary-color;
+  --text-color: $text-color;
+  --secondary-color: $secondary-color;
+  --leftnav-color: $leftnav-bgcolor;
+  --white-bg: $white-bg;
+}
+
+
+
+@mixin resetmp {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  @include resetmp;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+
+  color: $text-color;
+  background-color: $primary-color;
+  @media(max-width:980px){
+    overflow: hidden;
+  }
+  @media(max-width:620px){
+    font-size: 14px;
+ }
+}
+
+
+.dark-mode {
+  --primary-color: $primary-color-dark;
+  --secondary-color: $primary-color-dark;
+ 
+  --white-bg:  $primary-color-dark;
+  background: $primary-color-dark;
+ 
+}
+ul {
+  list-style: none;
+  @include resetmp;
+}
+
+// Mixins
+@mixin menu {
+  // Styles for the menu
+  //background-color: $secondary-color;
+}
+
+@mixin card {
+  // Styles for the cards
+  background-color: $background-color;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+// shimmer
+.shine {
+  background: #f6f7f8;
+  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+  display: inline-block;
+  position: relative;
+
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: placeholderShimmer;
+  -webkit-animation-timing-function: linear;
+}
+
+@keyframes placeholderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+
+.photo {
+  display: block !important;
+  width: 325px;
+  height: 100px;
+  margin-top: 15px;
+}
+
+// Layout
+.menu {
+  @include menu;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .card-small {
+
+    @include card;
+    margin-bottom: 20px;
+  }
+
+  .card-large {
+
+    @include card;
+    margin-bottom: 20px;
+  }
+}

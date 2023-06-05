@@ -1,0 +1,93 @@
+@import '../../../../../styles.scss';
+
+.cardmulti{
+  background-color: $white-bg;
+  padding: 30px;
+  margin-bottom: 28px;
+  display: flex;
+  box-shadow: 20px 7px 40px #00000014;
+  border-radius: 20px;
+  margin-top: -74px;
+  transform: scale(0.95);
+  z-index: 0;
+
+}
+.card {
+    background-color: $white-bg;
+    padding: 30px;
+    margin-bottom: 28px;
+    display: flex;
+    border-radius: 20px;
+    z-index: 1;
+    position: relative;
+    gap: 19px;
+    transition: all 0.1s ease;
+    @media(max-width:620px){
+      padding: 15px;
+   }
+    &:hover{
+      transform: scale(1.05);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    &__profilepic{
+      img{
+        width: 70px;
+        height: 70px;
+        border-radius: 100px;
+      }
+    }
+
+    &__detail{
+      flex: 1;
+    
+      &__top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__name{
+          font-weight: 600;
+          font-size: 20px;
+          @media(max-width:620px){
+            font-size: 16px;
+         }
+        }
+        &__date{
+          font-weight: 600;
+          font-size: 14px;
+          @media(max-width:620px){
+            font-size: 13px;
+         }
+        }
+      }
+
+      &__description{
+        display: flex;
+        flex-direction: column;
+
+        &__invite{
+          font-size: 20px;
+          margin-bottom: 20px;
+          text-transform: capitalize;
+          @media(max-width:620px){
+            font-size: 16px;
+         }
+        }
+        p{
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          color: $text-color;
+        }
+
+        &__attach{
+          margin-top: 9px;
+          color: #1FB5EB;
+          display: flex;
+          gap: 10px;
+        }
+      }
+    }
+}

@@ -1,0 +1,35 @@
+<div class="card" >
+    <div class="card__profilepic">
+      <img [src]="card.owner.picture" alt="profile pic">
+    </div>
+
+    <div class="card__detail">
+      <div class="card__detail__top">
+        <div class="card__detail__top__name">
+          {{card.owner.firstName}}  {{card.owner.lastName}} 
+        </div>
+        <div class="card__detail__top__date">
+          {{card.publishDate | date  : 'EEEE'}} &nbsp;
+          {{card.publishDate | date  : 'shortTime'}}
+        </div>
+      </div>
+      <div class="card__detail__description">
+        <div class="card__detail__description__invite">
+          {{card.tags[0]}}
+        </div>
+        <p>
+          {{card.text}}  {{card.text}}
+        </p>
+        <div class="card__detail__description__attach">
+          <span><img src="../../assets/img/noun_Attachment_1084336.svg" alt="icon"> </span> <span>4 Attachments</span>
+        </div>
+      </div>
+    </div>
+
+   
+  </div>
+
+  <div class="cardmulti" *ngIf="card.likes > 20">
+
+  </div>
+  

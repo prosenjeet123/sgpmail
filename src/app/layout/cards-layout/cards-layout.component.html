@@ -1,0 +1,33 @@
+<div class="content">
+    <div class="content__search">
+        <div class="content__search__icon">
+            <img src="../../../assets/img/icons8-search.svg" alt="icon">
+        </div>
+        <div class="content__search__input">
+            <input type="text" placeholder="Search">
+        </div>
+    </div>
+
+    <div class="content__cardswrapper">
+       
+
+        <ng-container *ngIf="!emailData; else contentTemplate">
+            <div class="photo shine"></div>
+
+            <div class="photo shine"></div>
+            <div class="photo shine"></div>
+            <div class="photo shine"></div>
+            
+        </ng-container>
+    
+        <ng-template #contentTemplate>
+            <div class="content__cardswrapper__card" *ngFor="let data of emailData; index as i" >
+       
+                <sgpmail-cards-ui [card]="data"  [ngClass]="{ 'selected': selectedCard === data.id }" (click)="selectCard(data)"></sgpmail-cards-ui>
+            </div>
+        </ng-template>
+        
+    </div>
+   
+
+</div>

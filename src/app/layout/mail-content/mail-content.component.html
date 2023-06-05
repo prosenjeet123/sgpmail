@@ -1,0 +1,97 @@
+<div class="mailcontent">
+    <div class="mailcontent__top">
+        <div class="mailcontent__top__lr">
+            <button class="mailcontent__top__lr__btns"></button>
+            <button class="mailcontent__top__lr__btns"></button>
+            <button class="mailcontent__top__lr__btns"></button>
+            <button class="mailcontent__top__lr__btns"></button>
+        </div>
+        <div class="mailcontent__top__rt" *ngIf="firstEmailData  || !loader">
+            <div class="mailcontent__top__rt__pagination">
+                {{currentPagination}}/{{emailData?.length}}
+            </div>
+            <div class="mailcontent__top__rt__leftarrow" [ngClass]="{'active':currentPagination !== 1}">
+                <button  (click)=" currentPagination === 1 ? '' : onCardClickFetchData(0) "><</button>
+            </div>
+            <div class="mailcontent__top__rt__rightarrow active">
+                <button (click)=" currentPagination <= emailData?.length ? onCardClickFetchData(1) : ''">></button>
+            </div>
+        </div>
+    </div>
+    <div class="mailcontent__detail">
+        <div class="mailcontent__detail__pic" *ngIf="firstEmailData || !loader">
+            <img [src]="firstEmailData.owner.picture" alt="profile image">
+        </div>
+
+        <div class="mailcontent__detail__desc" *ngIf="firstEmailData || !loader">
+            <div class="mailcontent__detail__desc__name">
+             {{firstEmailData.owner.firstName}}  {{firstEmailData.owner.lastName}}
+            </div>
+            <div class="mailcontent__detail__desc__posi">
+                {{firstEmailData.tags[0]}}
+            </div>
+            <div class="mailcontent__detail__desc__email">
+                {{firstEmailData.owner.firstName}}{{firstEmailData.owner.lastName}}@gmail.com
+            </div>
+
+            <div class="mailcontent__detail__desc__time">
+                {{firstEmailData.publishDate | date : 'EEEE' }}
+                {{firstEmailData.publishDate | date : 'shortTime' }}
+            </div>
+
+            <div class="mailcontent__detail__desc__body">
+                <div class="mailcontent__detail__desc__body__title">Hi {{firstEmailData.owner.firstName}}, </div>
+
+                <p>
+                {{firstEmailData.text}}</p>
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fermentum facilisis libero, venenatis mattis orci hendrerit eget. Etiam ultrices mollis justo, nec fermentum elit viverra eu. Cras at cursus turpis. Nullam magna sem, vulputate quis massa nec, mollis sollicitudin dui. Sed eu massa in arcu pharetra posuere. Phasellus maximus neque non ex dapibus fringilla. Praesent nec lacinia enim. Curabitur a dui nisl.
+                </p>
+            </div>
+            <div class="mailcontent__detail__desc__attach">
+                <div class="mailcontent__detail__desc__attach__btn">
+                    <span><img src="../../../assets/img/noun_Attachment_1084336.svg"></span>
+                   4  Attachment
+                </div>
+
+                <div class="mailcontent__detail__desc__attach__mossaic">
+                    <div class="mailcontent__detail__desc__attach__mossaic__item">
+                        <img src="https://picsum.photos/200/300?random={{firstEmailData.likes}}">
+                    </div>
+                    <div class="mailcontent__detail__desc__attach__mossaic__item">
+                        <img src="https://picsum.photos/200/300?random={{firstEmailData.likes}}1">
+                    </div>
+                    <div class="mailcontent__detail__desc__attach__mossaic__item">
+                        <img src="https://picsum.photos/600/400?random={{firstEmailData.likes}}2">
+                    </div>
+                    <div class="mailcontent__detail__desc__attach__mossaic__item">
+                        <img src="https://picsum.photos/200/200?random={{firstEmailData.likes}}3">
+                    </div>
+                </div>
+                <div class="mailcontent__detail__desc__attach__download">
+                    <button><span><img src="../../../assets/img/126488.svg" alt="icon"></span>Download</button> 4 mb total
+                </div>
+
+
+                <div class="mailcontent__detail__desc__attach__reply">
+                    <div class="mailcontent__detail__desc__attach__reply__input">
+                        <textarea  placeholder="Type Message" row="1" cols="1"></textarea>
+                    </div>
+                    <div class="mailcontent__detail__desc__attach__reply__icons">
+                        <button><img src="../../../assets/img/attach.svg" alt="icon"></button>
+                        <button><img src="../../../assets/img/1933005.svg" alt="icon"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mailcontent__detail__desc__footer">
+
+            </div>
+
+        </div>
+
+
+        <div class="photo shine" *ngIf="!firstEmailData || loader"></div>
+     
+    </div>
+</div>
